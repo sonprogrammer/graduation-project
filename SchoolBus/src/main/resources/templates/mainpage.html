@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한서대학교 교내버스 위치</title>
+  <link rel="stylesheet" href="/css/mainpage.css">
+  <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar_logo">
+    <i class="fa-solid fa-bus"></i>
+    <a  href="#">한서 교내버스</a>
+  </div>
+  <a id="admin-btn" href="#">관리자</a>
+</nav>
+<div class="UI-container">
+  <ul class="menu">
+    <li> <!--style="background: url(/images/d.jpeg);"--><a href="#">Board</a></li>
+    <li><a href="/map">Map</a></li>
+    <li><a href="/timetable">Timetable</a></li>
+  </ul>
+  <!-- <li onclick="window.open('https://www.naver.com');">naver</li> -->
+</div>
+<nav class="underbar">
+  <div class="under_logo">
+    <li><i title="sonprogrammer" class="fa-brands fa-instagram"></i></li>
+    <li><i title="010-3975-5037" class="fa-solid fa-phone"></i></li>
+  </div>
+</nav>
+<script>// 관리자 버튼 클릭 이벤트 처리
+const adminBtn = document.getElementById('admin-btn');
+
+adminBtn.addEventListener('click', () => {
+  const password = prompt('비밀번호를 입력하세요');
+  if (password === '비밀번호') {
+    // 팝업창에 들어갈 내용 작성
+    alert('관리자 페이지로 이동합니다.');
+  } else {
+    alert('비밀번호가 틀렸습니다.');
+  }
+});</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: skyblue;
+}
+
+button:focus{
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: darkblue;
+    padding: 12px 20px;
+}
+.navbar i{
+    color: #d49466;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.UI-container{
+    width: 100%;
+    /* 야매로 수직 중앙 정렬 맞춤 */
+    position: absolute;
+    top: 35%;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu li{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    align-items: center;
+    justify-content:space-around; /*이거도 야매로 맞춤*/
+    /* padding: 8px 12px; */
+    background-color: blue;
+    border-radius: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.menu li:hover{
+    background-color: blueviolet;
+    border-radius: 50%;
+    transform: scale(1.05);
+}
+
+.menu a:hover{
+    color: red;
+}
+
+.under_logo{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    list-style: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(103, 103, 243);
+}
+.underbar li{
+    color: white;
+    margin-right: 10px;
+    padding: 12px 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1000px){
+    .navbar{
+        flex-direction: row;
+    }
+    /* 야매로 맞춤 */
+    .UI-container{
+        position: relative;
+
+    }
+    .menu {
+        flex-direction: column;
+    }
+    .menu li{
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-height: 500px){
+    .UI-container{
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+}
