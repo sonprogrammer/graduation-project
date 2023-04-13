@@ -13,12 +13,12 @@
     <i class="fa-solid fa-bus"></i>
     <a  href="#">한서 교내버스</a>
   </div>
-  <a id="admin-btn" href="#">관리자</a>
+  <a id="admin-btn" >관리자</a>
 </nav>
 <div class="UI-container">
   <ul class="menu">
     <li> <!--style="background: url(/images/d.jpeg);"--><a href="/board">Board</a></li>
-    <li><a href="/map">Map</a></li>
+    <li><a href="/map_user">Map</a></li>
     <li><a href="/timetable">Timetable</a></li>
   </ul>
   <!-- <li onclick="window.open('https://www.naver.com');">naver</li> -->
@@ -34,9 +34,9 @@ const adminBtn = document.getElementById('admin-btn');
 
 adminBtn.addEventListener('click', () => {
   const password = prompt('비밀번호를 입력하세요');
-  if (password === '비밀번호') {
-    // 팝업창에 들어갈 내용 작성
+  if (password === '1') {
     alert('관리자 페이지로 이동합니다.');
+    window.location.href = '/map_manager'; // 비밀번호가 맞을 경우 페이지 이동
   } else {
     alert('비밀번호가 틀렸습니다.');
   }

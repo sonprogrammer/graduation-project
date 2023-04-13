@@ -33,6 +33,9 @@
       var lat = position.coords.latitude, // 위도
               lon = position.coords.longitude; // 경도
 
+      localStorage.setItem('x',lat); //x라는 키에 lat 값 저장
+      localStorage.setItem('y',lon); //y라는 키에 lon 값 저장
+
       var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
               message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
 
@@ -63,8 +66,8 @@
 
     // 인포윈도우를 생성합니다
     var infowindow = new kakao.maps.InfoWindow({
-      content : iwContent,
-      removable : iwRemoveable
+      content: iwContent,
+      removable: iwRemoveable
     });
 
     // 인포윈도우를 마커위에 표시합니다
@@ -73,6 +76,8 @@
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);
   }
+
 </script>
+<a href="/">메인페이지 이동</a>
 </body>
 </html>
