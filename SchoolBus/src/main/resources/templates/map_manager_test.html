@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>셔틀버스 실시간 위치 확인 서비스</title>
+
+</head>
+<body>
+
+<div id="map" style="width:1519px;height:600px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fee2849ca46b3422b484952eba0a400"></script>
+<script>
+
+  var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+          mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+          };
+
+  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+  if (navigator.geolocation) {
+
+    var options = {
+      enableHighAccuracy: true,
+      maximumAge: 0,
+      timeout: Infinity
+    };
+
+    var watchId = navigator.geolocation.watchPosition(function(position) {
+
+      var lat = position.coords.latitude, // 위도
+              lon = position.coords.longitude; // 경도
+
+      localStorage.setItem('x',lat); // x라는 키에 lat 값 저장
+      localStorage.setItem('y',lon); // y라는 키에 lon 값 저장
+
+      var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+              message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+
+      // 마커와 인포윈도우를 표시합니다
+      displayMarker(locPosition, message);
+
+    }, function(error) {
+      console.log(error);
+    }, options);
+
+  } else {
+    // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+
+    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+            message = 'geolocation을 사용할수 없어요..'
+
+    displayMarker(locPosition, message);
+  }
+
+  // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+  function displayMarker(locPosition, message) {
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+      map: map,
+      position: locPosition
+    });
+
+    var iwContent = message, // 인포윈도우에 표시할 내용
+            iwRemoveable = true;
+
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+      content: iwContent,
+      removable: iwRemoveable
+    });
+
+    // 인포윈도우를 마커위에 표시합니다
+    infowindow.open(map, marker);
+
+    // 지도 중심좌표를 접속위치로 변경합니다
+    map.setCenter(locPosition);
+  }
+
+</script>
+<a href="/">메인페이지 이동_현재 페이지는 테스트 페이지 입니다</a>
+</body>
+</html>
