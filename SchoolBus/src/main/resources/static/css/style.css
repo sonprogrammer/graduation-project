@@ -16,6 +16,21 @@ a{
     color: inherit;
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: darkblue;
+    padding: 12px 20px;
+}
+.navbar i{
+    color: #d49466;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+
 .board_wrap{                                
     width: 1000px;
     margin: 100px auto;
