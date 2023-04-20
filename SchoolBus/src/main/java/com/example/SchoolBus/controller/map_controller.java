@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class map_controller {
     @GetMapping("/map_manager")
     public String mapaction (){
-        return "map_manager_test";
+        return "map_manager";
     }
     @GetMapping("/map_user")
     public String mapaction2 (){
