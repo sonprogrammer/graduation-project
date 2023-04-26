@@ -21,3 +21,11 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+//텐서플로우
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'org.tensorflow', name: 'tensorflow-core-platform', version: '0.2.0'
+}
