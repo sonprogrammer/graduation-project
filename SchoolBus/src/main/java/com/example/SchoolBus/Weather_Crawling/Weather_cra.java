@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,6 +38,13 @@ public class Weather_cra {
             String rainfallinfo = matcher.group(1); // 첫 번째 그룹(괄호로 감싼 부분)의 값을 가져온다
             System.out.println("강수량: " + rainfallinfo + "\n" + weather); //출력 테스트
         }
-    }
 
+        String rainfallinfo = matcher.group(1);
+
+        double rainfall_data = Double.parseDouble(rainfallinfo);
+
+        Weather_obj weather_data = new Weather_obj();
+        weather_data.weather = weather;
+        weather_data.rainfall = rainfall_data;
+    }
 }

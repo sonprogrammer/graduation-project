@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
   <meta charset="UTF-8">
   <title>시간표</title>
@@ -26,12 +26,9 @@
   <!--시간표 도착시간은 50분으로 짜놈-->
   <!-- 알림받기 부분은 일단은 링크 대충 저렇게 걸어놈 -->
   <tr>
-    <td>날씨 정보
-      강수량: ${rainfall}
-      날씨: ${weather}
-    </td>
-    <td>08 : 40</td>
-    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+    <td>날씨 정보</td>
+    <td th:text="'강수량: ' + ${rainfall}">0</td>
+    <td th:text="'날씨: ' + ${weather}">0</td>
   </tr>
   <tr>
     <td>10 : 20</td>
