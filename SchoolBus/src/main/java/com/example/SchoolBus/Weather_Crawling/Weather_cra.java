@@ -46,5 +46,11 @@ public class Weather_cra {
         Weather_obj weather_data = new Weather_obj();
         weather_data.weather = weather;
         weather_data.rainfall = rainfall_data;
+        weather_data.test1 = "test1";
+        weather_data.test2 = 2.1;
+//        System.out.println(weather + rainfall_data);
+//        System.out.println(weather_data.rainfall + weather_data.weather);
+//        System.out.println(weather_data.test1 + weather_data.test2);
     }
+
 }
