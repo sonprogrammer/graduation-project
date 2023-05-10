@@ -5,11 +5,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,8 +15,8 @@ import java.util.regex.Pattern;
 @Service
 public class Weather_cra {
     private static String NAVER_Weather_URL = "https://weather.naver.com/today/";
-    @PostConstruct
-    public void getWeatherData() throws IOException {
+
+    public Weather_obj getWeatherData() throws IOException {
 
         Document doc = Jsoup.connect(NAVER_Weather_URL).get();
         Elements contents = doc.select(".summary .weather");
@@ -46,11 +43,9 @@ public class Weather_cra {
         Weather_obj weather_data = new Weather_obj();
         weather_data.weather = weather;
         weather_data.rainfall = rainfall_data;
-        weather_data.test1 = "test1";
-        weather_data.test2 = 2.1;
+
 //        System.out.println(weather + rainfall_data);
 //        System.out.println(weather_data.rainfall + weather_data.weather);
-//        System.out.println(weather_data.test1 + weather_data.test2);
+        return weather_data;
     }
-
 }
