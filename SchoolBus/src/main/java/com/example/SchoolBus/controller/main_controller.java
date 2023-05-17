@@ -9,10 +9,7 @@ public class main_controller {
     public String main(){
       return "mainpage";
     }
-//    @GetMapping("/timetable")
-//  public String timetable(){
-//    return "timetable";
-//    }
+
   @GetMapping("/board")
   public String board(){
     return "board";
