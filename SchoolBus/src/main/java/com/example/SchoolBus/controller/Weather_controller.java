@@ -21,10 +21,13 @@ public class Weather_controller {
 
         double rainfall = weatherData.getRainfall();
         String weather = weatherData.getWeather();
+        double time = weatherData.getTime();
+        String temp = weatherData.getTemperature();
 
         model.addAttribute("rainfall", rainfall);
         model.addAttribute("weather", weather);
-
+        model.addAttribute("time", time);
+        model.addAttribute("temp", temp);
 
         return "timetable";
     }
