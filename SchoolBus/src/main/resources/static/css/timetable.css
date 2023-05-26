@@ -3,17 +3,41 @@
     padding: 0;
     box-sizing: content-box;
 }
+body{
+    background: linear-gradient(270deg, rgb(236, 213, 232) 0%,
+    rgb(50, 112, 118) 100%);
+}
 .navbar{
     display: flex;
     justify-content: space-between;
-    background-color: darkblue;
+    background-color: lightsteelblue;
     padding: 12px 20px;
 }
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+}
 .navbar i{
-    color: #d49466;
+    color: DarkGreen;
 }
 .navbar a{
-    color: white;
+    color: black;
     text-decoration: none;
 }
 body{

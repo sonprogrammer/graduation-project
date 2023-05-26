@@ -5,7 +5,8 @@
 }
 
 body{
-    background-color: skyblue;
+    background: linear-gradient(180deg, rgb(236, 213, 232) 0%,
+    rgb(50, 112, 118) 100%);
 }
 
 button:focus{
@@ -17,16 +18,16 @@ button:focus{
 .navbar{
     display: flex;
     justify-content: space-between;
-    background-color: darkblue;
+    background-color: lightsteelblue;
     padding: 12px 20px;
 }
 .navbar i{
-    color: #d49466;
+    color: DarkGreen;
 }
 
 a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .UI-container{

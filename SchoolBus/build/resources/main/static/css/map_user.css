@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightsteelblue;
+    padding: 12px 20px;
+    opacity: revert;
+}
+
+.navbar i{
+    color: DarkGreen;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}

@@ -1,13 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한서대학교 교내버스 위치</title>
+    <link rel="stylesheet" href="/css/map_user.css">
+    <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
-    <title>다른 이미지로 마커 생성하기</title>
+    <title>한서대학교 교내버스 위치</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: lightsteelblue;
+            padding: 12px 20px;
+            opacity: revert;
+        }
+        .navbar i{
+            color: DarkGreen;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        /*@media screen and (max-width: 850px){*/
+        /*    main.map{*/
+        /*        width: 100%;*/
+        /*    }*/
+        /*}*/
+
+    </style>
+
 
 </head>
 <body>
-<div id="map" style="width:1519px;height:600px;"></div>
+<nav class="navbar">
+    <div class="navbar_logo">
+        <a href="/">
+            <i class="fa-solid fa-bus"></i>
+            <a  href="/">한서 교내버스</a>
+        </a>
+    </div>
+    <div class="menu-conatiner">
+        <ul class="menu">
+            <a href="timetable.html">
+            <li>Timetable</li>
+            </a>
+            <li>menu2</li>
+        </ul>
 
+
+    </div>
+</nav>
+<div>
+    <div id="map"> </div>
+</div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fee2849ca46b3422b484952eba0a400"></script>
 <script>
     //x,y 위도 경도 데이터 받아오기
@@ -42,6 +109,5 @@
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 </script>
-<a href="/">메인페이지 이동</a>
 </body>
 </html>
