@@ -48,6 +48,7 @@ public class Weather_cra {
         weather_data.weather = weather;
         weather_data.rainfall = rainfall_data;
         weather_data.time = time;
+        weather_data.temperature = temperature;
 
 
 //        System.out.println(weather + rainfall_data);
