@@ -50,7 +50,6 @@
               <h2 class="name" style="color: black;">
                 Map
               </h2>
-
             </div>
           </div>
         </div>
@@ -125,28 +124,53 @@
   });
 </script>
 <script>
-  var TrandingSlider = new Swiper('.tranding-slider', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    loop: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 2.5,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-  });
+    window.addEventListener('DOMContentLoaded', function() {
+        var TrandingSlider = new Swiper('.tranding-slider', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.5,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    });
 </script>
+<!--<script>-->
+<!--  var TrandingSlider = new Swiper('.tranding-slider', {-->
+<!--    effect: 'coverflow',-->
+<!--    grabCursor: true,-->
+<!--    centeredSlides: true,-->
+<!--    loop: true,-->
+<!--    slidesPerView: 'auto',-->
+<!--    coverflowEffect: {-->
+<!--      rotate: 0,-->
+<!--      stretch: 0,-->
+<!--      depth: 100,-->
+<!--      modifier: 2.5,-->
+<!--    },-->
+<!--    pagination: {-->
+<!--      el: '.swiper-pagination',-->
+<!--      clickable: true,-->
+<!--    },-->
+<!--    navigation: {-->
+<!--      nextEl: '.swiper-button-next',-->
+<!--      prevEl: '.swiper-button-prev',-->
+<!--    }-->
+<!--  });-->
+<!--</script>-->
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
