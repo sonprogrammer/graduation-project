@@ -41,8 +41,13 @@
         <!-- 지도 -->
         <div class="swiper-slide tranding-slide">
           <div class="tranding-slide-img">
+<<<<<<< HEAD
             <a href="/map_user">
               <img src="/css/img/map.png" alt="function"/>
+=======
+            <a href="map_user.html">
+              <img src="/css/img/map.png" alt="function">
+>>>>>>> 02ba87c10276ca4091d2561daabe758e12eafbfc
             </a>
           </div>
           <div class="tranding-slide-content">
@@ -61,7 +66,11 @@
         <!-- 시간표 -->
         <div class="swiper-slide tranding-slide">
           <div class="tranding-slide-img">
+<<<<<<< HEAD
             <a href="/timetable">
+=======
+            <a href="timetable.html">
+>>>>>>> 02ba87c10276ca4091d2561daabe758e12eafbfc
               <img src="/css/img/timetable.png" alt="function">
             </a>
           </div>
@@ -80,7 +89,11 @@
         <!-- 다른 기능 추가? -->
         <div class="swiper-slide tranding-slide">
           <div class="tranding-slide-img">
+<<<<<<< HEAD
             <a href="/board">
+=======
+            <a href="board.html">
+>>>>>>> 02ba87c10276ca4091d2561daabe758e12eafbfc
               <img src="/css/img/3.jpeg" alt="function">
             </a>
           </div>
@@ -120,6 +133,29 @@
       window.location.href = '/map_manager'; // 비밀번호가 맞을 경우 페이지 이동
     } else {
       alert('비밀번호가 틀렸습니다.');
+    }
+  });
+</script>
+<script>
+  var TrandingSlider = new Swiper('.tranding-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2.5,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     }
   });
 </script>
