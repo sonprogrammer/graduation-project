@@ -23,6 +23,8 @@ public class Weather_cra {
         String weather = contents.text();
         Document doc2 = Jsoup.connect("https://search.naver.com/search.naver?query=서산+날씨&nso=&where=nexearch&sm=tab_etc&tab_bar=1&ie=utf8&start=0").get();
         Elements rainfall = doc2.select(".rainfall");
+        Elements get_temperature = doc2.select("._today .weather_graphic .temperature_text");
+        String temperature = get_temperature.text().replaceAll("[^0-9.]", "");;
         String rainfallInfo = rainfall.get(0).text();
 //        System.out.println(rainfallInfo);             //테스트용 출력
 
@@ -33,16 +35,21 @@ public class Weather_cra {
 
         if (matcher.find()) {
             String rainfallinfo = matcher.group(1); // 첫 번째 그룹(괄호로 감싼 부분)의 값을 가져온다
-            System.out.println("강수량: " + rainfallinfo + "\n" + weather); //출력 테스트
+            System.out.println("강수량: " + rainfallinfo + "\n" + weather + "\n" + temperature); //출력 테스트
         }
 
         String rainfallinfo = matcher.group(1);
 
         double rainfall_data = Double.parseDouble(rainfallinfo);
 
+        double time_set = 3.7828497886657715 * 5 - 3.9854519367218018; // 딥러닝 식 가져와서 수정
+        double time = Math.round(time_set * 10) / 10.0;
         Weather_obj weather_data = new Weather_obj();
         weather_data.weather = weather;
         weather_data.rainfall = rainfall_data;
+        weather_data.time = time;
+        weather_data.temperature = temperature;
+
 
 //        System.out.println(weather + rainfall_data);
 //        System.out.println(weather_data.rainfall + weather_data.weather);
