@@ -42,8 +42,8 @@ public class Weather_cra {
 
         double rainfall_data = Double.parseDouble(rainfallinfo);
 
-        double time = rainfall_data + 11; // 딥러닝 식 가져와서 수정
-
+        double time_set = 3.7828497886657715 * 5 - 3.9854519367218018; // 딥러닝 식 가져와서 수정
+        double time = Math.round(time_set * 10) / 10.0;
         Weather_obj weather_data = new Weather_obj();
         weather_data.weather = weather;
         weather_data.rainfall = rainfall_data;
