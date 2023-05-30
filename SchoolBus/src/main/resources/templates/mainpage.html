@@ -1,138 +1,21 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>한서대학교 교내버스 위치</title>
-  <link rel="stylesheet" href="/css/mainpage.css">
-  <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>한서대 교내버스</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/static/css/mainpage.css">
 
-    body {
-      /*width: 100%;*/
-      /*flex-direction: row;*/
-      /*display: flex;*/
-      /*align-items: center;*/
-      background: linear-gradient(90deg, rgb(236, 213, 232) 0%,
-      rgb(50, 112, 118) 100%);
-    }
-
-    button:focus{
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
-
-    .navbar{
-      display: flex;
-      justify-content: space-between;
-      background-color: lightsteelblue;
-      padding: 12px 20px;
-    }
-    .navbar i{
-      color: DarkGreen;
-    }
-
-    a{
-      text-decoration: none;
-      color: white;
-    }
-
-    .UI-container{
-      width: 100%;
-      /* 야매로 수직 중앙 정렬 맞춤 */
-      position: absolute;
-      top: 35%;
-    }
-
-    .menu{
-      width: 100%;
-      display: flex;
-      list-style: none;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .menu li{
-      display: flex;
-      width: 200px;
-      height: 200px;
-      font-size: 40px;
-      align-items: center;
-      justify-content:space-around; /*이거도 야매로 맞춤*/
-      /* padding: 8px 12px; */
-      background-color: blue;
-      border-radius: 100%;
-      transition: transform 0.2s ease-in-out;
-
-    }
-
-    .menu li:hover {
-      background-color: blueviolet;
-      border-radius: 50%;
-      transform: scale(1.05);
-      /*//밑에는 마우스 위에 올리면 360도 회전시키는 모션*/
-      /*transform: rotate(360deg);*/
-      /*transform-origin: left top;*/
-      /*transform: rotateX(180deg);*/
-    }
-
-
-    .menu a:hover{
-      color: red;
-    }
-
-    .under_logo{
-      display: flex;
-      justify-content: center;
-      position: fixed;
-      list-style: none;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgb(103, 103, 243);
-    }
-    .underbar li{
-      color: white;
-      margin-right: 10px;
-      padding: 12px 20px;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-
-    @media screen and (max-width: 1000px){
-      .navbar{
-        flex-direction: row;
-      }
-      /* 야매로 맞춤 */
-      .UI-container{
-        position: relative;
-
-      }
-      .menu {
-        flex-direction: column;
-      }
-      .menu li{
-        margin-top: 25px;
-      }
-    }
-
-    @media screen and (max-height: 500px){
-      .UI-container{
-        margin-top: 50px;
-        margin-bottom: 100px;
-      }
-    }
-  </style>
 
 </head>
+
 <body>
+
+
+<!-- 상단 바 -->
 <nav class="navbar">
   <div class="navbar_logo">
     <a href="mainpage.html">
@@ -140,39 +23,112 @@
       <a  href="#">한서 교내버스</a>
     </a>
   </div>
-  <a id="admin-btn" >관리자</a>
+  <a id="admin-btn">관리자</a>
 </nav>
-<div class="UI-container">
-  <ul class="menu">
-    <li class="board"> <!--style="background: url(/images/d.jpeg);"--><a href="/board">Board</a></li>
-    <li class="Map"><a href="/map_user">Map</a></li>
-    <li class="timetable"><a href="/timetable">Timetable</a></li>
-  </ul>
-  <!-- <li onclick="window.open('https://www.naver.com');">naver</li> -->
-</div>
-<nav class="underbar">
-  <div class="under_logo">
-    <li><i title="항공소공" class="fa-brands fa-instagram"></i></li>
-    <li><i title="010-1234-5678" class="fa-solid fa-phone"></i></li>
+
+
+<!-- 각 기능 -->
+<section id="tranding">
+  <div class="container">
+    <h3 class="text-center section-subheading" style="font-size: 37px;">Let's take a SchoolBus 🚌 ~~</h3>
+    <h1 class="text-center section-heading">function</h1>
   </div>
 
-</nav>
+  <div class="container">
+    <div class="swiper tranding-slider">
+      <div class="swiper-wrapper">
+        <!-- Slide-start -->
 
-</body>
+        <!-- 지도 -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <a href="map_user.html">
+              <img src="/static/css/img/map.png" alt="function">
+            </a>
+          </div>
+          <div class="tranding-slide-content">
+            <div class="tranding-slide-content-bottom">
+              <h2 class="name" style="color: black;">
+                Map
+              </h2>
+
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+
+
+        <!-- 시간표 -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <a href="timetable.html">
+              <img src="/static/css/img/timetable.png" alt="function">
+            </a>
+          </div>
+          <div class="tranding-slide-content">
+            <div class="tranding-slide-content-bottom">
+              <h2 class="name">
+                Timetable
+              </h2>
+
+            </div>
+          </div>
+        </div>
+        <!-- Slide-end -->
+        <!-- Slide-start -->
+
+        <!-- 다른 기능 추가? -->
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <a href="board.html">
+              <img src="/static/img/3.jpeg" alt="function">
+            </a>
+          </div>
+          <div class="tranding-slide-content">
+            <div class="tranding-slide-content-bottom">
+              <h2 class="name">
+                Board
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tranding-slider-control">
+        <div class="swiper-button-prev slider-arrow">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
+        <div class="swiper-button-next slider-arrow">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <script>
 
   // 관리자 버튼 클릭 이벤트 처리
-const adminBtn = document.getElementById('admin-btn');
+  const adminBtn = document.getElementById('admin-btn');
 
-adminBtn.style.cursor = 'pointer';
-adminBtn.addEventListener('click', () => {
-  const password = prompt('비밀번호를 입력하세요');
-  if (password === '1') {
-    alert('관리자 페이지로 이동합니다.');
-    window.location.href = '/map_manager'; // 비밀번호가 맞을 경우 페이지 이동
-  } else {
-    alert('비밀번호가 틀렸습니다.');
-  }
-});
+  adminBtn.style.cursor = 'pointer';
+  adminBtn.addEventListener('click', () => {
+    const password = prompt('비밀번호를 입력하세요');
+    if (password === '1') {
+      alert('관리자 페이지로 이동합니다.');
+      window.location.href = '/map_manager'; // 비밀번호가 맞을 경우 페이지 이동
+    } else {
+      alert('비밀번호가 틀렸습니다.');
+    }
+  });
 </script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="mainpage.js"></script>
+</body>
+
 </html>
