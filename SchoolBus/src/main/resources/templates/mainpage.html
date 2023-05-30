@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>한서대 교내버스</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/static/css/mainpage.css">
+  <link rel="stylesheet" href="/css/mainpage.css">
 
 
 </head>
@@ -43,7 +43,7 @@
         <div class="swiper-slide tranding-slide">
           <div class="tranding-slide-img">
             <a href="map_user.html">
-              <img src="/static/css/img/map.png" alt="function">
+              <img src="/css/img/map.png" alt="function">
             </a>
           </div>
           <div class="tranding-slide-content">
@@ -63,7 +63,7 @@
         <div class="swiper-slide tranding-slide">
           <div class="tranding-slide-img">
             <a href="timetable.html">
-              <img src="/static/css/img/timetable.png" alt="function">
+              <img src="/css/img/timetable.png" alt="function">
             </a>
           </div>
           <div class="tranding-slide-content">
@@ -82,7 +82,7 @@
         <div class="swiper-slide tranding-slide">
           <div class="tranding-slide-img">
             <a href="board.html">
-              <img src="/static/img/3.jpeg" alt="function">
+              <img src="/css/img/3.jpeg" alt="function">
             </a>
           </div>
           <div class="tranding-slide-content">
@@ -121,6 +121,29 @@
       window.location.href = '/map_manager'; // 비밀번호가 맞을 경우 페이지 이동
     } else {
       alert('비밀번호가 틀렸습니다.');
+    }
+  });
+</script>
+<script>
+  var TrandingSlider = new Swiper('.tranding-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2.5,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     }
   });
 </script>
