@@ -1,10 +1,43 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    font-size: 10px;
+
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightsteelblue;
+    padding: 12px 20px;
+    opacity: revert;
+}
+
+
+.navbar a{
+    text-decoration: none;
+    color: white;
 }
 
 ul,li{
@@ -17,8 +50,8 @@ a{
 }
 
 .board_wrap{
-    width: 1000px;
-    margin: 100px auto;
+    width: 100%;
+    margin: 100px 50px auto 50px;
 }
 
 .board_title{

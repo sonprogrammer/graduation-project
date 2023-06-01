@@ -16,12 +16,11 @@
         }
 
         body, html {
-            height: 100%;
+            /*height: 100%;*/
             margin: 0;
             padding: 0;
 
         }
-
 
         .navbar {
             display: flex;
@@ -30,14 +29,12 @@
             padding: 12px 20px;
             opacity: revert;
         }
-        .navbar i{
-            color: DarkGreen;
-        }
 
         a{
             text-decoration: none;
-            color: black;
+            color: white;
         }
+
 
         #map {
             width: 100%;
@@ -57,16 +54,17 @@
 <nav class="navbar">
     <div class="navbar_logo">
         <a href="/">
-            <i class="fa-solid fa-bus"></i>
-            <a  href="/">한서 교내버스</a>
+            <a href="/" style="font-weight: bold">한서 교내버스</a>
         </a>
     </div>
     <div class="menu-conatiner">
         <ul class="menu">
-            <a href="timetable.html">
-            <li>Timetable</li>
+            <a  href="/timetable">
+            <li style="font-weight: bold">Timetable</li>
             </a>
-            <li>menu2</li>
+            <a href="/board" >
+            <li style="font-weight: bold">Emergency</li>
+            </a>
         </ul>
 
 
@@ -109,5 +107,6 @@
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 </script>
+
 </body>
 </html>

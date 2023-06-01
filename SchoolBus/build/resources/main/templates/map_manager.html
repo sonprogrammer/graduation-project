@@ -5,9 +5,47 @@
   <title>셔틀버스 실시간 위치 확인 서비스</title>
 
 </head>
-<body>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+   }
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightsteelblue;
+    padding: 12px 20px;
+  }
+  .navbar i{
+    color: DarkGreen;
+  }
 
-<div id="map" style="width:1519px;height:600px;"></div>
+  .navbar a{
+    text-decoration: none;
+    color: white;
+  }
+</style>
+<body>
+<!-- 상단 바 -->
+<nav class="navbar">
+  <div class="navbar_logo">
+    <a href="/">
+      <a  href="/" style="font-weight: bold">한서 교내버스</a>
+    </a>
+  </div>
+</nav>
+
+<div id="map"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fee2849ca46b3422b484952eba0a400"></script>
 <script>
@@ -81,6 +119,5 @@
   }
 
 </script>
-<a href="/">메인페이지 이동_현재 페이지는 테스트 페이지 입니다</a>
 </body>
 </html>

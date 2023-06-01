@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="UTF-8">
@@ -26,13 +26,14 @@
 </nav>
 
 
-<!-- 각 기능 -->
+<!--제목, 부제목-->
 <section id="tranding">
   <div class="container">
-    <h3 class="text-center section-subheading" style="font-size: 37px;">Let's take a SchoolBus 🚌 ~~</h3>
+    <h3 class="text-center section-subheading" style="font-size: 37px;">Let's take a SchoolBus 🚌 </h3>
     <h1 class="text-center section-heading">function</h1>
   </div>
 
+  <!-- 각 기능 -->
   <div class="container">
     <div class="swiper tranding-slider">
       <div class="swiper-wrapper">
@@ -40,11 +41,11 @@
 
         <!-- 지도 -->
         <div class="swiper-slide tranding-slide">
-          <a href="/map_user">
+        <a class="map" href="/map_user">
           <div class="tranding-slide-img">
-              <img src="/css/img/map.png" alt="function">
+              <img src="/css/img/map.png" alt="function" >
           </div>
-          </a>
+
           <div class="tranding-slide-content">
             <div class="tranding-slide-content-bottom">
               <h2 class="name" style="color: black;">
@@ -52,6 +53,7 @@
               </h2>
             </div>
           </div>
+        </a>
         </div>
         <!-- Slide-end -->
         <!-- Slide-start -->
@@ -59,10 +61,9 @@
 
         <!-- 시간표 -->
         <div class="swiper-slide tranding-slide">
+        <a class="timetable" href="/timetable">
           <div class="tranding-slide-img">
-            <a href="/timetable">
               <img src="/css/img/timetable.png" alt="function">
-            </a>
           </div>
           <div class="tranding-slide-content">
             <div class="tranding-slide-content-bottom">
@@ -72,24 +73,25 @@
 
             </div>
           </div>
+        </a>
         </div>
         <!-- Slide-end -->
         <!-- Slide-start -->
 
         <!-- 다른 기능 추가? -->
         <div class="swiper-slide tranding-slide">
+        <a class="board" href="/board">
           <div class="tranding-slide-img">
-            <a href="/board">
-              <img src="/css/img/3.jpeg" alt="function">
-            </a>
+              <img src="/css/img/비상.png" alt="function">
           </div>
           <div class="tranding-slide-content">
             <div class="tranding-slide-content-bottom">
-              <h2 class="name">
-                Board
+              <h2 class="name" style="color: black">
+                Emergency
               </h2>
             </div>
           </div>
+        </a>
         </div>
       </div>
 
@@ -147,6 +149,12 @@
         });
     });
 </script>
+<script>
+  function  goToMapUser(){
+    window.location.href = '/map_user'
+  }
+</script>
+
 
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

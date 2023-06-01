@@ -33,11 +33,9 @@ body{
     text-decoration: none;
     color: #333;
 }
-.navbar i{
-    color: DarkGreen;
-}
+
 .navbar a{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 body{
@@ -76,9 +74,7 @@ th {
     background-color: lightgray;
 }
 
-a:hover{
-    color: red;
-}
+
 
 .under_logo{
     display: flex;
