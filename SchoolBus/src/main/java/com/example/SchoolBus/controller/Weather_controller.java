@@ -31,4 +31,21 @@ public class Weather_controller {
 
         return "timetable";
     }
+    @GetMapping("/board")
+    public String board(Model model) throws IOException {
+        weatherCra.getWeatherData();
+        Weather_obj weatherData = weatherCra.getWeatherData();
+
+        double rainfall = weatherData.getRainfall();
+        String weather = weatherData.getWeather();
+        double time = weatherData.getTime();
+        String temp = weatherData.getTemperature();
+
+        model.addAttribute("rainfall", rainfall);
+        model.addAttribute("weather", weather);
+        model.addAttribute("time", time);
+        model.addAttribute("temp", temp);
+
+        return "board";
+    }
 }

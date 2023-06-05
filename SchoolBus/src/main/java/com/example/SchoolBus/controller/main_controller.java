@@ -9,9 +9,4 @@ public class main_controller {
     public String main(){
       return "mainpage";
     }
-
-  @GetMapping("/board")
-  public String board(){
-    return "board";
-  }
 }

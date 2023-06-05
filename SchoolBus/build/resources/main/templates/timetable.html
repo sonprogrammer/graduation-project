@@ -5,6 +5,32 @@
   <title>시간표</title>
   <link rel="stylesheet" href="/css/timetable.css">
   <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
+  <style>
+    .bus-timetable {
+      position: relative;
+      display: inline-block;
+    }
+
+    .new-text-box {
+      position: absolute;
+      top: 75px;
+      right: 180px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      max-width: calc(100% - 40px);
+      overflow-wrap: break-word;
+      width: 250px; /* 원하는 너비로 조정합니다 */
+      height: 100px; /* 원하는 높이로 조정합니다 */
+    }
+
+    .overlay-content {
+      position: relative;
+      z-index: 1;
+      text-align: right;
+      text-indent: 20px;
+    }
+  </style>
 </head>
 <body>
 <nav class="navbar">
@@ -26,6 +52,14 @@
 </nav>
 
 <h1>버스 시간표</h1>
+<div class="new-text-box">
+  <div class="overlay-content">
+    <td th:text="${weather}"></td><br>
+    <td th:text="'현재온도: ' + ${temp} + 'º'"></td><br>
+    <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
+    <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
+  </div>
+</div>
 <table>
   <thead>
   <tr>
@@ -38,19 +72,19 @@
   <!--시간표 도착시간은 50분으로 짜놈-->
   <!-- 알림받기 부분은 일단은 링크 대충 저렇게 걸어놈 -->
   <tr>
-    <td>날씨 정보</td>
-    <td th:text="'강수량: ' + ${rainfall}"></td>
-    <td th:text="'날씨: ' + ${weather}"></td>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
   </tr>
   <tr>
-    <td th:text="'현재온도: ' + ${temp}"></td>
-    <td th:text=" '지연시간: '+ ${time}"></td>
-    <td><a href="https://www.naver.com" target="_blacnk">test</a></td>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
   </tr>
   <tr>
-    <td>13 : 10</td>
-    <td>테스트 알림 버튼</td>
-    <td><a href="/Web_Push" target="_blacnk">알림 받기</a></td>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
   </tr>
   <tr>
     <td>16 : 10</td>
