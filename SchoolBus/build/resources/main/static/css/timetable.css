@@ -76,20 +76,20 @@ th {
 
 
 
-.under_logo{
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    list-style: none;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(103, 103, 243);
-}
-.underbar li{
-    color: white;
-    margin-right: 10px;
-    padding: 12px 20px;
-    font-size: 30px;
-    cursor: pointer;
-}
+/*.under_logo{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    position: fixed;*/
+/*    list-style: none;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    background-color: rgb(103, 103, 243);*/
+/*}*/
+/*.underbar li{*/
+/*    color: white;*/
+/*    margin-right: 10px;*/
+/*    padding: 12px 20px;*/
+/*    font-size: 30px;*/
+/*    cursor: pointer;*/
+/*}*/

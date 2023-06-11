@@ -50,16 +50,46 @@
     </ul>
   </div>
 </nav>
-
 <h1>버스 시간표</h1>
+
+
+
 <div class="new-text-box">
   <div class="overlay-content">
     <td th:text="${weather}"></td><br>
+    <i id="weather-icon" class="fa-sharp fa-solid"></i>
     <td th:text="'현재온도: ' + ${temp} + 'º'"></td><br>
     <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
     <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let weather = {weather}
+    let iconClass;
+    // HTML에서 요소를 선택합니다.
+    let weatherElement = document.querySelector('.overlay-content td:nth-child(1)');
+
+// weather 값을 가져옵니다.
+//     let weather = weatherElement.textContent;
+    let weatherIcon = document.getElementById("weather-icon")
+
+    //날씨에 따른 아이콘 변화
+    if (weather === 'sunny'){
+      iconClass = "fa-sharp fa-solid fa-sun"
+    }else if (weather === 'cloudy'){
+      iconClass = "fa-sharp fa-solid fa-clouds"
+    }else if (weather === 'rainy'){
+      iconClass = 'fa-sharp fa-solid fa-cloud-showers-heavy'
+    }else{
+      iconClass = 'fa-sharp fa-solid fa-question-circle'
+    }
+
+    weatherIcon.classList = iconClass
+  });
+</script>
+
 <table>
   <thead>
   <tr>
@@ -103,12 +133,12 @@
   </tr>
   </tbody>
 </table>
-<nav class="underbar">
-  <div class="under_logo">
-    <li><i title="sonprogrammer" class="fa-brands fa-instagram"></i></li>
-    <li><i title="010-3975-5037" class="fa-solid fa-phone"></i></li>
-  </div>
-</nav>
+<!--<nav class="underbar">-->
+<!--  <div class="under_logo">-->
+<!--    <li><i title="sonprogrammer" class="fa-brands fa-instagram"></i></li>-->
+<!--    <li><i title="010-3975-5037" class="fa-solid fa-phone"></i></li>-->
+<!--  </div>-->
+<!--</nav>-->
 </body>
 </html>
 
