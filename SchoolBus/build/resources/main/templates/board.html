@@ -1,97 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>편의 기능</title>
-  <link rel="stylesheet" href="css/board.css">
-  <style>
-    .bus-timetable {
-      position: relative;
-      display: inline-block;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>편의 기능</title>
+    <link rel="stylesheet" href="/css/board.css">
+    <style>
+        .bus-timetable {
+            position: relative;
+            display: inline-block;
+        }
 
-    .new-text-box {
-      position: absolute;
-      top: 75px;
-      right: 180px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      max-width: calc(100% - 40px);
-      overflow-wrap: break-word;
-      width: 250px; /* 원하는 너비로 조정합니다 */
-      height: 100px; /* 원하는 높이로 조정합니다 */
-    }
+        .new-text-box {
+            position: absolute;
+            top: 75px;
+            right: 180px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            max-width: calc(100% - 40px);
+            overflow-wrap: break-word;
+            width: 250px;
+            /* 원하는 너비로 조정합니다 */
+            height: 100px;
+            /* 원하는 높이로 조정합니다 */
+        }
 
-    .overlay-content {
-      position: relative;
-      z-index: 1;
-      text-align: right;
-      text-indent: 20px;
-    }
-  </style>
+        .overlay-content {
+            position: relative;
+            z-index: 1;
+            text-align: right;
+            text-indent: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <!-- 상단 바 -->
 <nav class="navbar">
-  <div class="navbar_logo">
-    <a href="/">
-      <a href="/" style="font-weight: bold">한서 교내버스</a>
-    </a>
-  </div>
-  <div class="menu-conatiner">
-    <ul class="menu">
-      <a  href="/map_user">
-        <li style="font-weight: bold" >Map</li>
-      </a>
-      <a href="/timetable" >
-        <li style="font-weight: bold">Timetable</li>
-      </a>
-    </ul>
+    <div class="navbar_logo">
+        <a href="/">
+            <a href="/" style="font-weight: bold">한서 교내버스</a>
+        </a>
+    </div>
+    <div class="menu-conatiner">
+        <ul class="menu">
+            <a href="/map_user">
+                <li style="font-weight: bold">Map</li>
+            </a>
+            <a href="/timetable">
+                <li style="font-weight: bold">Timetable</li>
+            </a>
+        </ul>
 
-
-  </div>
+    </div>
 </nav>
 <div class="new-text-box">
-  <div class="overlay-content">
-    <td th:text="${weather}"></td><br>
-    <td th:text="'현재온도: ' + ${temp} + 'º'"></td><br>
-    <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
-    <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
-  </div>
+    <div class="overlay-content">
+        <td th:text="${weather}"></td>
+        <br>
+        <td th:text="'현재온도: ' + ${temp} + 'º'"></td>
+        <br>
+        <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td>
+        <br>
+        <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
+    </div>
 </div>
 
 <div class="board_wrap">
-  <div class="board_title">
-    <strong>편의 기능</strong>
-  </div>
-  <div class="board_list_wrap">
-    <div class="board_list">
-      <div class="top">
-        <div class="num">번호</div>
-        <div class ="title">제목</div>
-      </div>
-      <div>
-        <div class="num">4</div>
-        <div class="title"><a href="https://open.kakao.com/o/gWWcPTvd" target="_blank">카카오톡 한서대학교 카풀 오픈채팅방</a></div>
-      </div>
-      <div>
-        <div class="num">3</div>
-        <div class="title"><a href="https://news.naver.com/" target="_blank">네이버 뉴스</a></div>
-      </div>
-      <div>
-        <div class="num">2</div>
-        <div class="title"><a href="https://hsu.busro.net:456/rsvc/" target="_blank">한서대학교 셔틀버스 예매 페이지</a></div>
-      </div>
-      <div>
-        <div class="num">1</div>
-        <div class="title"><a href="https://hanseo.everytime.kr/" target="_blank">에브리타임 한서대학교</a></div>
-      </div>
+    <div class="board_title">
+        <strong>편의 기능</strong>
     </div>
-  </div>
+
+    <div class="board_list_wrap">
+        <div class="category">
+            <!-- <div class="top">-->
+            <!-- <div class="num">번호</div>-->
+            <!-- <div class ="title">제목</div>-->
+            <!-- </div>-->
+            <div class="katalk">
+                <!-- <div class="katalk"></div>-->
+                <a
+                        href="https://open.kakao.com/o/gWWcPTvd"
+                        target="_blank"
+                        alt="카카오톡 한서대학교 카풀 오픈채팅방">
+                    <img src="/css/img/katalk.png" width="300px">
+                </a>
+
+            </div>
+        </div>
+        <div class="category">
+            <div class="news">
+                <!-- <div class="num">3</div>-->
+                <a href="https://news.naver.com/" target="_blank" alt="네이버 뉴스">
+                    <img src="/css/img/news.png" width="300px">
+                </a>
+            </div>
+        </div>
+        <div class="category">
+            <div class="book">
+                <!-- <div class="num">2</div>-->
+                <a
+                        href="https://hsu.busro.net:456/rsvc/"
+                        target="_blank"
+                        alt="한서대학교 셔틀버스 예매 페이지">
+                    <img src="/css/img/book.png" width="300px">
+                </a>
+            </div>
+        </div>
+        <div class="category">
+            <div class="everytime">
+                <!-- <div class="num">1</div>-->
+                <a href="https://hanseo.everytime.kr/" target="_blank" alt="에브리타임 한서대학교">
+                    <img src="/css/img/everytime.png" width="300px">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
 </div>
 </body>
 </html>

@@ -5,7 +5,8 @@
   <title>시간표</title>
   <link rel="stylesheet" href="/css/timetable.css">
   <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
-  <Script defer src="client.js"></Script>
+<!--  <Script defer src="client.js"></Script>-->
+  <script src="/css/client.js"></script>
   <style>
     .bus-timetable {
       position: relative;
@@ -55,19 +56,20 @@
 
 
 
+
 <div class="new-text-box">
   <div class="overlay-content">
-    <td th:text="${weather}"></td><br>
     <i id="weather-icon" class="fa-sharp fa-solid"></i>
-    <td th:text="'현재온도: ' + ${temp} + 'º'"></td><br>
-    <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
-    <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
+    <td id="weather-text" th:text="${weather}"></td><br>
+    <td id="temperature-text" th:text="'현재온도: ' + ${temp} + 'º'"></td><br>
+    <td id="rainfall-text" th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
+    <td id="time-text" th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
   </div>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let weather = {weather}
+    let weather = '{weater}'
     let iconClass;
     // HTML에서 요소를 선택합니다.
     let weatherElement = document.querySelector('.overlay-content td:nth-child(1)');
@@ -105,41 +107,36 @@
   <tr>
     <td>18 : 10</td>
     <td>19 : 00</td>
-    <button onclick ="makeNoti();"></button>
+    <td><button onclick ="makeNoti()">알림받기</button></td>
   </tr>
   <tr>
     <td>18 : 10</td>
     <td>19 : 00</td>
-    <td><a href= target="_blacnk">알림 받기</a></td>
+    <td><a href= target="_blank">알림 받기</a></td>
   </tr>
   <tr>
     <td>18 : 10</td>
     <td>19 : 00</td>
-    <td><a href= target="_blacnk">알림 받기</a></td>
+    <td><a href= target="_blank">알림 받기</a></td>
   </tr>
   <tr>
     <td>16 : 10</td>
     <td>17 : 00</td>
-    <td><a href= target="_blacnk">알림 받기</a></td>
+    <td><a href= target="_blank">알림 받기</a></td>
   </tr>
   <tr>
     <td>17 : 20</td>
     <td>18 : 10</td>
-    <td><a href= target="_blacnk">알림 받기</a></td>
+    <td><a href= target="_blank">알림 받기</a></td>
   </tr>
   <tr>
     <td>18 : 10</td>
     <td>19 : 00</td>
-    <td><a href= target="_blacnk">알림 받기</a></td>
+    <td><a href= target="_blank">알림 받기</a></td>
   </tr>
   </tbody>
 </table>
-<!--<nav class="underbar">-->
-<!--  <div class="under_logo">-->
-<!--    <li><i title="sonprogrammer" class="fa-brands fa-instagram"></i></li>-->
-<!--    <li><i title="010-3975-5037" class="fa-solid fa-phone"></i></li>-->
-<!--  </div>-->
-<!--</nav>-->
+
 </body>
 </html>
 
