@@ -16,9 +16,9 @@
     .new-text-box {
       position: absolute;
       top: 75px;
-      right: 180px;
-      padding: 10px;
-      border: 1px solid #ccc;
+      right: 140px;
+      /*padding: 10px;*/
+      /*border: 1px solid #ccc;*/
       box-sizing: border-box;
       max-width: calc(100% - 40px);
       overflow-wrap: break-word;
@@ -46,8 +46,8 @@
       <a class="map" href="/map_user">
         <li style="font-weight: bold">Map</li>
       </a>
-      <a class="Emergency" href="/board">
-      <li style="font-weight: bold">Emergency</li>
+      <a class="Convenience" href="/board">
+      <li style="font-weight: bold">Convenience</li>
       </a>
     </ul>
   </div>
@@ -59,9 +59,9 @@
 
 <div class="new-text-box">
   <div class="overlay-content">
-    <i id="weather-icon" class="fa-sharp fa-solid"></i>
+    <i id="weather-icon" class="fa-sharp fa-solid" ></i>
     <td id="weather-text" th:text="${weather}"></td><br>
-    <td id="temperature-text" th:text="'현재온도: ' + ${temp} + 'º'"></td><br>
+    <td id="temperature-text" th:text="'현재온도: ' + ${temp} + '°'"></td><br>
     <td id="rainfall-text" th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
     <td id="time-text" th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
   </div>
@@ -69,8 +69,8 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let weather = '{weater}'
-    let iconClass;
+    let weather = '맑음' //실제 날씨값을 할당한다, 야매로 이런식으로 우리가 수정해서 넣을수 있음,,
+
     // HTML에서 요소를 선택합니다.
     let weatherElement = document.querySelector('.overlay-content td:nth-child(1)');
 
@@ -78,15 +78,16 @@
 //     let weather = weatherElement.textContent;
     let weatherIcon = document.getElementById("weather-icon")
 
+    let iconClass;
     //날씨에 따른 아이콘 변화
-    if (weather === 'sunny'){
+    if (weather === 'sunny' || weather === "맑음"){
       iconClass = "fa-sharp fa-solid fa-sun"
-    }else if (weather === 'cloudy'){
+    }else if (weather === 'cloudy' || weather === "흐림"){
       iconClass = "fa-sharp fa-solid fa-clouds"
-    }else if (weather === 'rainy'){
+    }else if (weather === 'rainy' || weather === "비"){
       iconClass = 'fa-sharp fa-solid fa-cloud-showers-heavy'
-    }else{
-      iconClass = 'fa-sharp fa-solid fa-question-circle'
+    }else {
+      iconClass = 'fa-sharp fa-solid fa-question'
     }
 
     weatherIcon.classList = iconClass
