@@ -40,3 +40,6 @@ while True:
     x_test = float(input("Enter a value for x: "))
     y_test = model.predict(np.array([x_test]))
     print(f"Predicted y for x={x_test}: {y_test[0][0]:.2f}")
+
+# 아래의 주소로 실습하면 됨
+# https://colab.research.google.com/drive/1TKbeE3lWLYK1ioQUBhe7SVE8B1CQk6Dd?usp=sharing
