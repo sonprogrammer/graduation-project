@@ -44,6 +44,15 @@ body{
     color: white;
 }
 
+.weather {
+
+    position: fixed;
+    top: 130px;
+    right: 100px;
+    z-index: 9999;
+    font-size: 32px;
+}
+
 .board_wrap{
     width: 100%;
     margin-top: 100px;

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>편의 기능</title>
     <link rel="stylesheet" href="/css/board.css">
     <style>
@@ -12,27 +14,27 @@
             display: inline-block;
         }
 
-        .new-text-box {
-            position: absolute;
-            top: 75px;
-            right: 140px;
-            /*padding: 10px;*/
-            /*border: 1px solid #ccc;*/
-            box-sizing: border-box;
-            max-width: calc(100% - 40px);
-            overflow-wrap: break-word;
-            width: 250px;
-            /* 원하는 너비로 조정합니다 */
-            height: 100px;
-            /* 원하는 높이로 조정합니다 */
-        }
+        /*.new-text-box {*/
+        /*    position: absolute;*/
+        /*    top: 75px;*/
+        /*    right: 140px;*/
+        /*    !*padding: 10px;*!*/
+        /*    !*border: 1px solid #ccc;*!*/
+        /*    box-sizing: border-box;*/
+        /*    max-width: calc(100% - 40px);*/
+        /*    overflow-wrap: break-word;*/
+        /*    width: 250px;*/
+        /*    !* 원하는 너비로 조정합니다 *!*/
+        /*    height: 100px;*/
+        /*    !* 원하는 높이로 조정합니다 *!*/
+        /*}*/
 
-        .overlay-content {
-            position: relative;
-            z-index: 1;
-            text-align: right;
-            text-indent: 20px;
-        }
+        /*.overlay-content {*/
+        /*    position: relative;*/
+        /*    z-index: 1;*/
+        /*    text-align: right;*/
+        /*    text-indent: 20px;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -56,18 +58,58 @@
 
     </div>
 </nav>
-<div class="new-text-box">
-    <div class="overlay-content">
-        <td th:text="${weather}"></td>
-        <br>
-        <td th:text="'현재온도: ' + ${temp} + 'º'"></td>
-        <br>
-        <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td>
-        <br>
-        <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
-    </div>
+<!--new test***************************************************-->
+<div class="weather">
+    <div class="CurrIcon"></div>
+    <div class="CurrTemp"></div>
+<!--    <div class="City"></div>-->
 </div>
 
+
+
+
+<!--테스트 ( 6/13)*************************************************** -->
+<!--<div class="new-text-box">-->
+<!--    <div class="overlay-content">-->
+<!--        <i id="weather-icon" class="fa-sharp fa-solid" ></i>-->
+<!--        <td id="weather-text" th:text="${weather}"></td><br>-->
+<!--        <td id="temperature-text" th:text="'현재온도: ' + ${temp} + '°'"></td><br>-->
+<!--        <td id="rainfall-text" th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>-->
+<!--        <td id="time-text" th:text=" '예상 지연시간: '+ ${time} + '분'"></td>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function () {-->
+<!--        let weather = '맑음' //실제 날씨값을 할당한다, 야매로 이런식으로 우리가 수정해서 넣을수 있음,,-->
+
+<!--        // HTML에서 요소를 선택합니다.-->
+<!--        let weatherElement = document.querySelector('.overlay-content td:nth-child(1)');-->
+
+<!--// weather 값을 가져옵니다.-->
+<!--//     let weather = weatherElement.textContent;-->
+<!--        let weatherIcon = document.getElementById("weather-icon")-->
+
+<!--        let iconClass;-->
+<!--        //날씨에 따른 아이콘 변화-->
+<!--        if (weather === 'sunny' || weather === "맑음"){-->
+<!--            iconClass = "fa-sharp fa-solid fa-sun"-->
+<!--        }else if (weather === 'cloudy' || weather === "흐림"){-->
+<!--            iconClass = "fa-sharp fa-solid fa-clouds"-->
+<!--        }else if (weather === 'rainy' || weather === "비"){-->
+<!--            iconClass = 'fa-sharp fa-solid fa-cloud-showers-heavy'-->
+<!--        }else {-->
+<!--            iconClass = 'fa-sharp fa-solid fa-question'-->
+<!--        }-->
+
+<!--        weatherIcon.classList = iconClass-->
+<!--    });-->
+<!--</script>-->
+
+
+<!--테스트 ( 6/13) ***************************************************-->
 <div class="board_wrap">
     <div class="board_title">
         <strong>편의 기능</strong>
@@ -120,5 +162,39 @@
     </div>
     <!-- </div> -->
 </div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        let weatherIcon = {
+            '01' : 'fas fa-sun',
+            '02' : 'fas fa-cloud-sun',
+            '03' : 'fas fa-cloud',
+            '04' : 'fas fa-cloud-meatball',
+            '09' : 'fas fa-cloud-sun-rain',
+            '10' : 'fas fa-cloud-showers-heavy',
+            '11' : 'fas fa-poo-storm',
+            '13' : 'far fa-snowflake',
+            '50' : 'fas fa-smog'
+        };
+
+        $.ajax({
+
+            url : "http://api.openweathermap.org/data/2.5/weather?q="+'seosan'+"&appid="+"c98216fdd5f29bb8103a673be31e42a9",
+
+            dataType:'json',
+            type:'GET',
+            success:function(data){
+                let $Icon = (data.weather[0].icon).substr(0,2);
+                let $Temp = Math.floor(data.main.temp - 273.15) + 'º';
+                let $city = data.name;
+
+                $('.CurrIcon').append('<i class="' + weatherIcon[$Icon] +'"></i>');
+                $('.CurrTemp').prepend($Temp);
+                $('.City').append($city);
+            }
+        })
+    });
+</script>
 </body>
 </html>
